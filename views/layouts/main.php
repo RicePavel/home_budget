@@ -39,7 +39,8 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Статьи дохода', 'url' => ['/item/income_items']],
-            ['label' => 'Статьи расхода', 'url' => ['item/expense_items']]
+            ['label' => 'Статьи расхода', 'url' => ['item/expense_items']],
+            ['label' => 'Операции', 'url' => ['operation/list']]
             /*
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],

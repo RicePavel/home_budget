@@ -39,11 +39,11 @@ $this->title = $header;
         <td>
             <?php $form = ActiveForm::begin(['action' => ['item/delete']]); ?>
             <input type="hidden" name="item_id" value="<?= $item->item_id ?>" />
+            <input type='hidden' name='type' value="<?= $type ?>" />
             <input src="img/delete_3.png" type="image" name="submit" onclick="return confirm('подтвердите удаление')" />
             <?php ActiveForm::end() ?>
         </td>
     </tr>
     <?php } ?>
 </table>
-
 

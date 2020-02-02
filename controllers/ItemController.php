@@ -52,11 +52,15 @@ class ItemController extends Controller
     public function actionDelete() {
         $request = Yii::$app->request;
         $item_id = $request->post('item_id');
+        $type = $request->post('type');
         if ($item_id) {
             $model = Item::findOne($item_id);
             if ($model) {
                 $model->delete();
             }
+        }
+        if ($type == Item::EXPENSE_TYPE) {
+            return $this->redirect(['item/expense_items']);
         }
         return $this->redirect(['item/income_items']);
     }

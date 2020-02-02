@@ -6,7 +6,14 @@ use yii\db\ActiveRecord;
 
 class Item extends ActiveRecord {
     
+    /**
+     * доход
+     */
     const INCOME_TYPE = 1;
+    
+    /**
+     * расход
+     */
     const EXPENSE_TYPE = 0;
     
     public function rules() {
