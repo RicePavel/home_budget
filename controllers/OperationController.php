@@ -11,7 +11,8 @@ use app\models\Operation;
 class OperationController extends Controller {
     
     public function actionList() {
-        return $this->render('list');
+        $operations = Operation::find()->with('item')->all();
+        return $this->render('list', ['operations' => $operations]);
     }
     
     public function actionAdd($type) {

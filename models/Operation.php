@@ -12,6 +12,10 @@ class Operation extends ActiveRecord {
         ];
     }
     
+    public function getItem() {
+        return $this->hasOne(Item::className(), ['item_id' => 'item_id']);
+    }
+    
     public static function tableName() {
         return '{{operation}}';
     }
