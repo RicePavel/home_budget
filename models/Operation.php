@@ -20,6 +20,14 @@ class Operation extends ActiveRecord {
         return '{{operation}}';
     }
     
+    public function beforeSave($insert) {
+        if (!parent::beforeSave($insert)) {
+            return false;
+        }
+        $this->insert_date = date("Y-m-d H:i:s");
+        return true;
+    }
+    
     public function saveOperation() : bool {
         $item = Item::findOne($this->item_id);
         if ($item) {

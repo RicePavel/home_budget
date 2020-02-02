@@ -12,7 +12,8 @@ class OperationController extends Controller {
     
     public function actionList() {
         $operations = Operation::find()->with('item')->all();
-        return $this->render('list', ['operations' => $operations]);
+        $sumAmount = Operation::find()->sum('amount');
+        return $this->render('list', ['operations' => $operations, 'sumAmount' => $sumAmount]);
     }
     
     public function actionAdd($type) {
