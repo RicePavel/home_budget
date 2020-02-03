@@ -35,7 +35,7 @@ $this->title = $header;
 <table class="table">
     <?php foreach ($items as $item) { ?>
     <tr>
-        <td><?= $item->name ?></td>
+        <td><?= Html::encode($item->name) ?></td>
         <td>
             <?php $form = ActiveForm::begin(['action' => ['item/delete']]); ?>
             <input type="hidden" name="item_id" value="<?= $item->item_id ?>" />
